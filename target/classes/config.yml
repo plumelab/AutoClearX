@@ -1,0 +1,14 @@
+# 物品白名单：填 Bukkit Material 枚举名，命中的物品不会被清理。
+# 示例（建议按需取消注释使用）：
+# itemMaterialWhitelist:
+#   - DIAMOND
+#   - NETHERITE_INGOT
+itemMaterialWhitelist: []
+
+# 实体白名单：填 Bukkit EntityType 枚举名，命中的实体不会被清理。
+# 示例（建议按需取消注释使用）：
+# entityTypeWhitelist:
+#   - VILLAGER
+#   - IRON_GOLEM
+entityTypeWhitelist: []
+language: zh_CN
