@@ -1,0 +1,79 @@
+common:
+  none: "无"
+  unknown: "未知"
+
+command:
+  sweep:
+    usage: "&c用法: /sweep <status|now|trash>"
+    no-permission-now: "&c你没有权限立即清理。"
+    triggered: "&a已触发清理。"
+    no-target: "&e当前没有可清理的目标区块。"
+    player-only-trash: "&c只有玩家可以打开垃圾桶。"
+    unknown-subcommand: "&c未知子命令。请使用 status、now 或 trash。"
+  sweepbench:
+    usage: "&c用法: /sweepbench <run|status|clear>"
+    no-permission-run: "&c你没有权限运行基准测试。"
+    started: "&a基准测试已开始。"
+    already-running: "&e基准测试正在运行。"
+    no-permission-clear: "&c你没有权限清理基准测试。"
+    cleared: "&a基准测试世界已清理，基准测试已中止。"
+    unknown-subcommand: "&c未知子命令。请使用 run、status 或 clear。"
+
+sweep:
+  status:
+    header: "&6Sweep 状态"
+    state: "&e状态: {state}"
+    target: "&e目标: {target}"
+    countdown: "&e倒计时: {countdown}"
+    global: "&e总量: {current} / {threshold}"
+    global-unavailable: "&e总量: {current} / 不可用 (Benchmark 未完成)"
+    top: "&e最高区块: {top} / {threshold}"
+    top-unavailable: "&e最高区块: {top} / 不可用"
+  state:
+    idle: "空闲"
+    countdown: "倒计时"
+    cleaning: "清理中"
+  notify:
+    countdown-start: "&c该区块将在 {seconds} 秒后清理。"
+    countdown-cancel: "&e已低于阈值，取消清理。"
+    cleanup-done: "&a清理已完成。"
+  broadcast:
+    prefix: "&b[Sweep] "
+    status:
+      reached: "已达到"
+      not-reached: "未达到"
+    unavailable: "不可用"
+    actionbar: "总量: {globalCount}/{globalTrigger} | Top: {topWorld} {topCoords} {topCount}/{chunkTrigger} | 状态: {state}"
+    global: "当前总量: {current} / 触发阈值: {threshold} ({status})"
+    global-unavailable: "当前总量: {current} / 触发阈值: 不可用 (Benchmark 未完成)"
+    top: "当前最高区块: {top} / 触发阈值: {threshold}"
+    top-unavailable: "当前最高区块: {top} / 触发阈值: 不可用"
+  trash:
+    title: "公共垃圾桶"
+
+sweepbench:
+  status:
+    header: "&6SweepBench 状态"
+    state: "&e状态: {state}"
+    round: "&e轮次: {round}"
+    last-slope: "&e最新斜率(单区块/多区块): {single} / {multi}"
+    thresholds: "&e有效阈值(单区块/区域): {single} / {area}"
+  state:
+    idle: "空闲"
+    wait_delay: "等待延迟"
+    check_baseline: "基线检测"
+    round_single: "单区块采样"
+    clean: "清理"
+    round_multi: "多区块采样"
+    save: "保存"
+  round:
+    single: "单区块"
+    multi: "多区块"
+
+log:
+  command-not-registered: "指令 {command} 未在 plugin.yml 中注册。"
+  benchmark-world-unavailable: "基准测试世界不可用。"
+  benchmark-baseline-too-high: "基线 MSPT >= 40ms，基准测试已取消。"
+  benchmark-save-failed: "保存基准测试结果失败: {error}"
+  invalid-material: "白名单中存在无效物品: {material}"
+  invalid-entity-type: "白名单中存在无效实体类型: {entity}"

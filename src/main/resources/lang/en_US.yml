@@ -1,0 +1,79 @@
+common:
+  none: "None"
+  unknown: "Unknown"
+
+command:
+  sweep:
+    usage: "&cUsage: /sweep <status|now|trash>"
+    no-permission-now: "&cYou do not have permission to sweep now."
+    triggered: "&aSweep triggered."
+    no-target: "&eNo target chunk available to sweep."
+    player-only-trash: "&cOnly players can open the trash inventory."
+    unknown-subcommand: "&cUnknown subcommand. Use status, now, or trash."
+  sweepbench:
+    usage: "&cUsage: /sweepbench <run|status|clear>"
+    no-permission-run: "&cYou do not have permission to run benchmarks."
+    started: "&aBenchmark started."
+    already-running: "&eBenchmark is already running."
+    no-permission-clear: "&cYou do not have permission to clear benchmarks."
+    cleared: "&aBenchmark world cleared and benchmark aborted."
+    unknown-subcommand: "&cUnknown subcommand. Use run, status, or clear."
+
+sweep:
+  status:
+    header: "&6Sweep Status"
+    state: "&eState: {state}"
+    target: "&eTarget: {target}"
+    countdown: "&eCountdown: {countdown}"
+    global: "&eGlobal: {current} / {threshold}"
+    global-unavailable: "&eGlobal: {current} / Unavailable (Benchmark incomplete)"
+    top: "&eTop: {top} / {threshold}"
+    top-unavailable: "&eTop: {top} / Unavailable"
+  state:
+    idle: "Idle"
+    countdown: "Countdown"
+    cleaning: "Cleaning"
+  notify:
+    countdown-start: "&cThis chunk will be cleaned in {seconds} seconds."
+    countdown-cancel: "&eBelow threshold, cleanup cancelled."
+    cleanup-done: "&aCleanup complete."
+  broadcast:
+    prefix: "&b[Sweep] "
+    status:
+      reached: "Reached"
+      not-reached: "Not reached"
+    unavailable: "N/A"
+    actionbar: "Total: {globalCount}/{globalTrigger} | Top: {topWorld} {topCoords} {topCount}/{chunkTrigger} | State: {state}"
+    global: "Global count: {current} / Trigger: {threshold} ({status})"
+    global-unavailable: "Global count: {current} / Trigger: Unavailable (Benchmark incomplete)"
+    top: "Top chunk: {top} / Trigger: {threshold}"
+    top-unavailable: "Top chunk: {top} / Trigger: Unavailable"
+  trash:
+    title: "Public Trash"
+
+sweepbench:
+  status:
+    header: "&6SweepBench Status"
+    state: "&eState: {state}"
+    round: "&eRound: {round}"
+    last-slope: "&eLast slope(single/multi): {single} / {multi}"
+    thresholds: "&eEffective thresholds(single/area): {single} / {area}"
+  state:
+    idle: "Idle"
+    wait_delay: "Waiting"
+    check_baseline: "Baseline Check"
+    round_single: "Single Chunk"
+    clean: "Clean"
+    round_multi: "Multi Chunk"
+    save: "Save"
+  round:
+    single: "Single"
+    multi: "Multi"
+
+log:
+  command-not-registered: "Command {command} is not registered in plugin.yml."
+  benchmark-world-unavailable: "Benchmark world unavailable."
+  benchmark-baseline-too-high: "Baseline MSPT >= 40ms, benchmark cancelled."
+  benchmark-save-failed: "Failed to save benchmark results: {error}"
+  invalid-material: "Invalid material in whitelist: {material}"
+  invalid-entity-type: "Invalid entity type in whitelist: {entity}"

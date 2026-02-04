@@ -1,0 +1,11 @@
+name: AutoClearX
+version: '1.0'
+main: fengzhiyu.top.autoClearX.AutoClearX
+api-version: '1.21'
+commands:
+  sweepbench:
+    description: Run and manage benchmark calibration.
+    usage: /sweepbench <run|status|clear>
+  sweep:
+    description: Sweep loaded chunks and report status.
+    usage: /sweep <status|now|trash>
